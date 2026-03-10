@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <title>Share Markdown Content - Free Online Markdown Editor with Instant Sharing</title>
+    <meta name="description" content="ShareMDC.com - Free online Markdown editor with instant sharing. Write, preview, and share your Markdown content with short links. Support for all Markdown syntax, code highlighting, and social media sharing." />
+    <meta name="keywords" content="markdown editor, share markdown, markdown viewer, markdown preview, online markdown, markdown sharing, free markdown tool, markdown syntax, markdown to html" />
+    <meta name="author" content="ShareMDC" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f6b6b" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sharemdc.com/" />
+    <meta property="og:title" content="Share Markdown Content - Free Online Markdown Editor" />
+    <meta property="og:description" content="Write, preview, and share your Markdown content with instant short links. Perfect for documentation, notes, and content sharing." />
+    <meta property="og:image" content="https://sharemdc.com/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sharemdc.com/" />
+    <meta property="twitter:title" content="Share Markdown Content - Free Online Markdown Editor" />
+    <meta property="twitter:description" content="Write, preview, and share your Markdown content with instant short links. Perfect for documentation, notes, and content sharing." />
+    <meta property="twitter:image" content="https://sharemdc.com/og-image.png" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sharemdc.com/" />
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ShareMDC - Share Markdown Content",
+      "url": "https://sharemdc.com",
+      "description": "Free online Markdown editor with instant sharing. Write, preview, and share your Markdown content with short links.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://sharemdc.com/s/{search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/i18n.js"></script>
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "__CLARITY_ID__");
+  </script>
+</head>
+  <body class="light-theme" data-theme-color="day">
+    <div class="top-controls">
+      <select id="languageSelector" class="language-selector">
+        <option value="en" selected>English</option>
+        <option value="zh">中文</option>
+        <option value="ja">日本語</option>
+        <option value="de">Deutsch</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="pt">Português</option>
+      </select>
+      <div class="theme-settings" role="group" aria-label="主题设置">
+        <select id="themeSelector" class="theme-selector" aria-label="主题色">
+          <option value="day">白天</option>
+          <option value="night">夜晚</option>
+          <option value="ocean">海洋</option>
+          <option value="ember">熔岩</option>
+          <option value="citrus">柑橘</option>
+          <option value="forest">森林</option>
+          <option value="ink">墨蓝</option>
+          <option value="rose">玫瑰</option>
+        </select>
+      </div>
+    </div>
+
+    <main class="app">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Share Markdown Content</p>
+          <h1>写作、预览、分享</h1>
+          <p class="sub">输入内容，生成短链接，分享后立即预览。</p>
+        </div>
+        <button id="shareBtn" class="primary">分享</button>
+      </header>
+
+      <section class="panel">
+        <div class="editor">
+          <label class="label" for="content">编辑区</label>
+          <textarea id="content" placeholder="在这里输入 Markdown..."></textarea>
+        </div>
+        <div class="preview">
+          <label class="label">预览区</label>
+          <div id="preview" class="preview-body"></div>
+        </div>
+      </section>
+
+      <section class="share-result" id="shareResult" hidden>
+        <div>
+          <p class="label">分享链接</p>
+          <a id="shareLink" href="#" target="_blank" rel="noopener"></a>
+        </div>
+        <div class="share-actions">
+          <button id="copyBtn" class="ghost">复制</button>
+          <button id="socialShareBtn" class="ghost" aria-label="分享到社交媒体">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- 社交媒体分享弹窗 -->
+      <div id="socialShareModal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>分享到</h3>
+            <button id="closeModal" class="close-btn" aria-label="关闭">×</button>
+          </div>
+          <div class="social-buttons">
+            <button class="social-btn wechat" data-platform="wechat">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8.5 13.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm7 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 4a9 9 0 0 0-9 9c0 2.4.94 4.58 2.5 6.2l-1.2 3.6 4-1.3a9 9 0 0 0 3.7.8c5 0 9-4 9-9s-4-9-9-9z"/>
+              </svg>
+              <span>微信</span>
+            </button>
+            <button class="social-btn qq" data-platform="qq">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4a8 8 0 1 0 8 8 8 0 0 0-8-8zm0 14a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"/>
+              </svg>
+              <span>QQ</span>
+            </button>
+            <button class="social-btn weibo" data-platform="weibo">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+              </svg>
+              <span>微博</span>
+            </button>
+            <button class="social-btn twitter" data-platform="twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0 1.97-2.48c-1.78 1.06-3.76 1.8-5.86 2.18a4.48 4.48 0 0 0-7.63 4.08c-3.4.1-6.4-1.8-8.4-4.28a4.48 4.48 0 0 0 6.9 5.76A10.9 10.9 0 0 1 1 21a10.9 10.9 0 0 0 14-13l1.5-1.5z"/>
+              </svg>
+              <span>Twitter</span>
+            </button>
+            <button class="social-btn facebook" data-platform="facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6H17V4.8c-.4-.1-1.6-.2-2.9-.2-2.9 0-4.8 1.8-4.8 5V11H6.5v3h2.8v8z"/>
+              </svg>
+              <span>Facebook</span>
+            </button>
+            <button class="social-btn telegram" data-platform="telegram">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21.4 4.6 18.3 19c-.2 1-.8 1.2-1.7.8l-4.7-3.4-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.8-8c.4-.3-.1-.5-.5-.2l-10.9 6.9-4.7-1.5c-1-.3-1-1 .2-1.4l18.3-7.1c.8-.3 1.6.2 1.3 1.6z"/>
+              </svg>
+              <span>Telegram</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

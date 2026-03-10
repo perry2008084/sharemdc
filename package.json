@@ -1,0 +1,32 @@
+{
+  "name": "sharemdc",
+  "version": "1.0.0",
+  "description": "Share AI content and Markdown with one click.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "markdown",
+    "editor",
+    "ai",
+    "share",
+    "productivity",
+    "developer-tools"
+  ],
+  "author": "perry2008084",
+  "license": "MIT",
+  "dependencies": {
+    "@microsoft/clarity": "^1.0.2",
+    "better-sqlite3": "^12.6.2",
+    "dompurify": "^3.3.1",
+    "express": "^5.2.1",
+    "jsdom": "^28.1.0",
+    "marked": "^17.0.2",
+    "nanoid": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
