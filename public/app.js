@@ -344,10 +344,16 @@ async function shareToSocial(platform, url, title) {
   }
 }
 
+// Debounce preview rendering to avoid excessive updates during fast typing
+let _previewDebounceTimer;
 contentEl.addEventListener("input", function() {
-  hasUserEdited = true; // 标记用户已经编辑过内容
+  hasUserEdited = true;
   saveEditorCache(contentEl.value);
-  renderPreview();
+
+  clearTimeout(_previewDebounceTimer);
+  _previewDebounceTimer = setTimeout(() => {
+    renderPreview();
+  }, 300);
 });
 
 shareBtn.addEventListener("click", async () => {
@@ -458,14 +464,13 @@ async function copyToClipboard(text) {
   }
 }
 
-async function renderPreview() {
-  const res = await fetch("/api/preview", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ content: contentEl.value })
-  });
-  if (res.ok) {
-    const data = await res.json();
-    previewEl.innerHTML = data.html;
+// Render Markdown preview locally using marked + DOMPurify (no server round-trip)
+function renderPreview() {
+  try {
+    const rawHtml = marked.parse(contentEl.value || "");
+    const cleanHtml = DOMPurify.sanitize(rawHtml);
+    previewEl.innerHTML = cleanHtml;
+  } catch (err) {
+    console.error("Preview render failed:", err);
   }
 }
