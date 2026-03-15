@@ -344,6 +344,18 @@ async function shareToSocial(platform, url, title) {
   }
 }
 
+// Sync scroll position from editor to preview (proportional)
+let _isSyncingScroll = false;
+contentEl.addEventListener("scroll", function() {
+  if (_isSyncingScroll) return;
+  _isSyncingScroll = true;
+  requestAnimationFrame(() => {
+    const editorScrollRatio = contentEl.scrollTop / (contentEl.scrollHeight - contentEl.clientHeight || 1);
+    previewEl.scrollTop = editorScrollRatio * (previewEl.scrollHeight - previewEl.clientHeight);
+    _isSyncingScroll = false;
+  });
+});
+
 // Debounce preview rendering to avoid excessive updates during fast typing
 let _previewDebounceTimer;
 contentEl.addEventListener("input", function() {
