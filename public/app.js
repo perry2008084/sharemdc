@@ -18,12 +18,18 @@ const EDITOR_SESSION_KEY = "editor_session_active";
 const CODE_THEME_KEY = "codeTheme";
 
 // Configure marked to use highlight.js for code blocks
-marked.setOptions({
-  highlight: function(code, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      return hljs.highlight(code, { language: lang }).value;
+marked.use({
+  renderer: {
+    code: function({ text, lang }) {
+      let highlighted;
+      if (lang && hljs.getLanguage(lang)) {
+        highlighted = hljs.highlight(text, { language: lang }).value;
+      } else {
+        highlighted = hljs.highlightAuto(text).value;
+      }
+      const langClass = lang ? ` class="hljs language-${lang}"` : ' class="hljs"';
+      return `<pre><code${langClass}>${highlighted}</code></pre>\n`;
     }
-    return hljs.highlightAuto(code).value;
   }
 });
 
