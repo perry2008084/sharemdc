@@ -206,6 +206,7 @@ textarea {
 }
 
 .preview-body pre {
+  position: relative;
   background: var(--code-bg);
   padding: 12px;
   border-radius: 10px;
@@ -213,6 +214,30 @@ textarea {
   max-width: 100%;
   word-wrap: break-word;
   white-space: pre-wrap;
+}
+
+.code-copy-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 2px 10px;
+  font-size: 11px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--muted);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.preview-body pre:hover .code-copy-btn {
+  opacity: 1;
+}
+
+.code-copy-btn:hover {
+  color: var(--ink);
+  background: var(--bg);
 }
 
 .preview-body code {

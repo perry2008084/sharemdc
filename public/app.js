@@ -5,6 +5,7 @@ const shareResult = document.getElementById("shareResult");
 const shareLink = document.getElementById("shareLink");
 const copyBtn = document.getElementById("copyBtn");
 const themeSelector = document.getElementById("themeSelector");
+const codeThemeSelector = document.getElementById("codeThemeSelector");
 const socialShareBtn = document.getElementById("socialShareBtn");
 const socialShareModal = document.getElementById("socialShareModal");
 const closeModal = document.getElementById("closeModal");
@@ -14,6 +15,74 @@ const localizedPlatforms = {
 };
 const EDITOR_CACHE_KEY = "editor_cache_key";
 const EDITOR_SESSION_KEY = "editor_session_active";
+const CODE_THEME_KEY = "codeTheme";
+
+// Configure marked to use highlight.js for code blocks
+marked.setOptions({
+  highlight: function(code, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      return hljs.highlight(code, { language: lang }).value;
+    }
+    return hljs.highlightAuto(code).value;
+  }
+});
+
+// Code theme management
+const HLJS_CDN = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/";
+
+function setCodeTheme(theme) {
+  const link = document.getElementById("hljsTheme");
+  if (link) {
+    link.href = HLJS_CDN + theme + ".min.css";
+  }
+  localStorage.setItem(CODE_THEME_KEY, theme);
+  if (codeThemeSelector && codeThemeSelector.value !== theme) {
+    codeThemeSelector.value = theme;
+  }
+}
+
+function initCodeTheme() {
+  const saved = localStorage.getItem(CODE_THEME_KEY) || "github";
+  setCodeTheme(saved);
+}
+
+initCodeTheme();
+if (codeThemeSelector) {
+  codeThemeSelector.addEventListener("change", (e) => setCodeTheme(e.target.value));
+}
+
+// Add copy buttons to all code blocks in preview
+function addCodeCopyButtons() {
+  const codeBlocks = previewEl.querySelectorAll("pre > code");
+  codeBlocks.forEach((codeEl) => {
+    const pre = codeEl.parentElement;
+    if (pre.querySelector(".code-copy-btn")) return; // already has button
+    pre.style.position = "relative";
+    const btn = document.createElement("button");
+    btn.className = "code-copy-btn";
+    btn.textContent = window.I18n?.t("复制") || "Copy";
+    btn.addEventListener("click", async () => {
+      const text = codeEl.textContent;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        // fallback
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.cssText = "position:fixed;opacity:0;left:-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+      }
+      btn.textContent = window.I18n?.t("已复制") || "Copied";
+      setTimeout(() => {
+        btn.textContent = window.I18n?.t("复制") || "Copy";
+      }, 1200);
+    });
+    pre.appendChild(btn);
+  });
+}
 
 // 跟踪用户是否已经开始编辑内容
 let hasUserEdited = false;
@@ -482,6 +551,7 @@ function renderPreview() {
     const rawHtml = marked.parse(contentEl.value || "");
     const cleanHtml = DOMPurify.sanitize(rawHtml);
     previewEl.innerHTML = cleanHtml;
+    addCodeCopyButtons();
   } catch (err) {
     console.error("Preview render failed:", err);
   }

@@ -47,6 +47,8 @@
     <link rel="stylesheet" href="/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/marked@17.0.2/lib/marked.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.3.1/dist/purify.min.js"></script>
+    <link id="hljsTheme" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
     <script src="/i18n.js"></script>
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -80,6 +82,18 @@
           <option value="forest">森林</option>
           <option value="ink">墨蓝</option>
           <option value="rose">玫瑰</option>
+        </select>
+        <select id="codeThemeSelector" class="theme-selector" aria-label="代码主题" data-i18n-aria="代码主题">
+          <option value="github">GitHub</option>
+          <option value="github-dark">GitHub Dark</option>
+          <option value="monokai">Monokai</option>
+          <option value="dracula">Dracula</option>
+          <option value="atom-one-light">Atom One Light</option>
+          <option value="atom-one-dark">Atom One Dark</option>
+          <option value="vs">VS</option>
+          <option value="vs2015">VS2015 Dark</option>
+          <option value="tokyo-night-dark">Tokyo Night</option>
+          <option value="nord">Nord</option>
         </select>
       </div>
     </div>

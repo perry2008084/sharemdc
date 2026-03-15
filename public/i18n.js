@@ -42,6 +42,7 @@ const translations = {
     "森林": "森林",
     "墨蓝": "墨蓝",
     "玫瑰": "玫瑰",
+    "代码主题": "代码主题",
     "关闭": "关闭",
 
     // 默认内容（编辑框）
@@ -89,6 +90,7 @@ const translations = {
     "森林": "Forest",
     "墨蓝": "Ink",
     "玫瑰": "Rose",
+    "代码主题": "Code Theme",
     "关闭": "Close",
 
     // 默认内容（编辑框）
@@ -136,6 +138,7 @@ const translations = {
     "森林": "フォレスト",
     "墨蓝": "インク",
     "玫瑰": "ローズ",
+    "代码主题": "コードテーマ",
     "关闭": "閉じる",
 
     // 默认内容（编辑框）
@@ -183,6 +186,7 @@ const translations = {
     "森林": "Wald",
     "墨蓝": "Tinte",
     "玫瑰": "Rose",
+    "代码主题": "Code-Thema",
     "关闭": "Schließen",
 
     // 默认内容（编辑框）
@@ -230,6 +234,7 @@ const translations = {
     "森林": "Bosque",
     "墨蓝": "Tinta",
     "玫瑰": "Rosa",
+    "代码主题": "Tema de código",
     "关闭": "Cerrar",
 
     // 默认内容（编辑框）
@@ -277,6 +282,7 @@ const translations = {
     "森林": "Forêt",
     "墨蓝": "Encre",
     "玫瑰": "Rose",
+    "代码主题": "Thème de code",
     "关闭": "Fermer",
 
     // 默认内容（编辑框）
@@ -324,6 +330,7 @@ const translations = {
     "森林": "Floresta",
     "墨蓝": "Tinta",
     "玫瑰": "Rosa",
+    "代码主题": "Tema de código",
     "关闭": "Fechar",
 
     // 默认内容（编辑框）
