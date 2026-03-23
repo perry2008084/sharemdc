@@ -50,6 +50,7 @@
     <link id="hljsTheme" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
     <script src="/i18n.js"></script>
+    <script src="/export.js"></script>
     <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments) };
@@ -105,7 +106,10 @@
           <h1>写作、预览、分享</h1>
           <p class="sub">输入内容，生成短链接，分享后立即预览。</p>
         </div>
-        <button id="shareBtn" class="primary">分享</button>
+        <div class="header-actions">
+          <button id="exportBtn" class="ghost" aria-label="导出">导出</button>
+          <button id="shareBtn" class="primary">分享</button>
+        </div>
       </header>
 
       <section class="panel">

@@ -141,6 +141,15 @@ const translations = {
     "代码主题": "コードテーマ",
     "关闭": "閉じる",
 
+    // 导出功能
+    "导出": "エクスポート",
+    "导出为 Markdown": "Markdownとしてエクスポート",
+    "导出为 PDF": "PDFとしてエクスポート",
+    "下载 Markdown": "Markdownをダウンロード",
+    "打印为 PDF": "PDFとして印刷",
+    "导出成功": "エクスポート成功",
+    "导出失败": "エクスポート失敗",
+
     // 默认内容（编辑框）
     "defaultContent": "# Share Markdown Content へようこそ\n\n## 機能\n- **リアルタイムプレビュー**: 左側で Markdown を入力すると、右側でリアルタイムにレンダリングされます\n- **短縮リンク生成**: コンテンツを共有するための短縮リンクを生成\n- **マルチプラットフォーム共有**: WeChat、QQ、Weibo、Twitter に対応\n- **美しいテーマ**: 8種類のカラーテーマから選択可能\n\n## 使い方\n1. **書く**: 左側のエディターで Markdown コンテンツを入力\n2. **プレビュー**: 右側でレンダリング結果をリアルタイムに確認\n3. **共有**: 「共有」ボタンをクリックして短縮リンクを生成\n4. **コピー**: 「コピー」ボタンでリンクをクリップボードにコピー\n5. **SNS共有**: ソーシャルボタンで各プラットフォームに共有\n\n## ヒント\n- 標準的な Markdown 構文をサポート\n- コードのシンタックスハイライト表示\n- テーブル、リスト、引用などの要素をサポート\n- クリーンで邪魔のないインターフェース\n- 高速で軽量\n\nShare Markdown Content をお楽しみください！🚀\n"
   },
@@ -188,6 +197,15 @@ const translations = {
     "玫瑰": "Rose",
     "代码主题": "Code-Thema",
     "关闭": "Schließen",
+
+    // 导出功能
+    "导出": "Exportieren",
+    "导出为 Markdown": "Als Markdown exportieren",
+    "导出为 PDF": "Als PDF exportieren",
+    "下载 Markdown": "Markdown herunterladen",
+    "打印为 PDF": "Als PDF drucken",
+    "导出成功": "Export erfolgreich",
+    "导出失败": "Export fehlgeschlagen",
 
     // 默认内容（编辑框）
     "defaultContent": "# Willkommen bei Share Markdown Content\n\n## Funktionen\n- **Sofortige Vorschau**: Sehen Sie Ihr Markdown in Echtzeit gerendert\n- **Kurze Links**: Erstellen Sie teilbare Links für Ihre Inhalte\n- **Multi-Plattform**: Teilen Sie zu WeChat, QQ, Weibo, Twitter\n- **Schöne Themen**: Wählen Sie aus 8 Farbthemen\n\n## Verwendung\n1. **Schreiben**: Geben Sie Ihren Markdown-Inhalt im Editor ein\n2. **Vorschau**: Sehen Sie die gerenderte Vorschau sofort\n3. **Teilen**: Klicken Sie auf die Schaltfläche \"Teilen\", um einen kurzen Link zu erstellen\n4. **Kopieren**: Klicken Sie auf \"Kopieren\", um den Link in die Zwischenablage zu kopieren\n5. **Soziales Teilen**: Klicken Sie auf die Social-Media-Buttons, um auf den entsprechenden Plattformen zu teilen\n\n## Tipps\n- Unterstützt die gesamte Standard-Markdown-Syntax\n- Unterstützt Syntaxhervorhebung für Code\n- Unterstützt Tabellen, Listen, Zitate und andere Elemente\n- Kostenlos und werbefreit zu nutzen\n\n## Beginnen\nFangen Sie jetzt an, Ihre Markdown-Inhalte zu erstellen! ✍\n"

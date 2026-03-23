@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Export Test</title>
+</head>
+<body>
+  <h1>Export Function Test</h1>
+  <button id="testExport">Test Export</button>
+  <pre id="content"># Test Content
+
+This is a test markdown content.
+
+## Features
+- Feature 1
+- Feature 2
+- Feature 3
+
+## Code
+```javascript
+console.log("Hello, World!");
+```
+</pre>
+
+  <script src="/export.js"></script>
+  <script>
+    document.getElementById('testExport').addEventListener('click', function() {
+      console.log('ExportModule:', window.ExportModule);
+      const content = document.getElementById('content').textContent;
+      const previewEl = document.getElementById('content');
+
+      if (window.ExportModule) {
+        window.ExportModule.showExportMenu(
+          this,
+          content,
+          previewEl,
+          'test',
+          function() {
+            console.log('Menu closed');
+          }
+        );
+      } else {
+        console.error('ExportModule not loaded');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -186,6 +186,24 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  // 初始化导出按钮
+  const exportBtn = document.getElementById("exportBtn");
+  if (exportBtn && window.ExportModule) {
+    exportBtn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      const filename = "markdown-document";
+      window.ExportModule.showExportMenu(
+        this,
+        contentEl.value,
+        previewEl,
+        filename,
+        function() {
+          // 菜单关闭回调
+        }
+      );
+    });
+  }
+
   initializeEditorContent();
 });
 
@@ -562,3 +580,4 @@ function renderPreview() {
     console.error("Preview render failed:", err);
   }
 }
+

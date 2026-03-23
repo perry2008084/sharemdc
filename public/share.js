@@ -4,10 +4,14 @@ const themeSelector = document.getElementById("themeSelector");
 const socialShareBtn = document.getElementById("socialShareBtn");
 const socialShareModal = document.getElementById("socialShareModal");
 const closeModal = document.getElementById("closeModal");
+const exportBtn = document.getElementById("exportBtn");
 const localizedPlatforms = {
   zh: ["wechat", "qq", "weibo"],
   other: ["twitter", "facebook", "telegram"]
 };
+
+// 存储加载的 Markdown 内容（用于导出）
+let loadedMarkdownContent = "";
 
 // 初始化多语言支持 - 等待 DOM 和所有脚本加载完成
 document.addEventListener("DOMContentLoaded", function() {
@@ -29,6 +33,26 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   }
+
+  // 初始化导出按钮
+  if (exportBtn && window.ExportModule) {
+    exportBtn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      const filename = `shared-${id}`;
+      window.ExportModule.showExportMenu(
+        this,
+        loadedMarkdownContent,
+        previewEl,
+        filename,
+        function() {
+          // 菜单关闭回调
+        }
+      );
+    });
+  }
+
+  // 加载分享内容
+  loadShare();
 });
 
 // 主题切换
@@ -263,8 +287,6 @@ async function shareToSocial(platform, url, title) {
 const parts = location.pathname.split("/");
 const id = parts[parts.length - 1];
 
-loadShare();
-
 async function loadShare() {
   try {
     const res = await fetch(`/api/share/${id}`);
@@ -272,6 +294,9 @@ async function loadShare() {
       throw new Error(window.I18n?.t("加载中...") || "加载中...");
     }
     const data = await res.json();
+    // 保存 Markdown 内容用于导出
+    loadedMarkdownContent = data.content;
+
     const previewRes = await fetch("/api/preview", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -280,7 +305,8 @@ async function loadShare() {
     const previewData = await previewRes.json();
     previewEl.innerHTML = previewData.html;
     const time = new Date(data.createdAt).toLocaleString();
-    metaEl.textContent = `${window.I18n?.t("加载中...") || "加载中..."} ${time}`;
+    const shareText = window.I18n?.t("查看我的 Markdown 分享") || "查看我的 Markdown 分享";
+    metaEl.textContent = `${shareText} · ${time}`;
   } catch (err) {
     metaEl.textContent = err.message || (window.I18n?.t("加载中...") || "加载中...");
   }
