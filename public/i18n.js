@@ -45,6 +45,15 @@ const translations = {
     "代码主题": "代码主题",
     "关闭": "关闭",
 
+    // 导出功能
+    "导出": "导出",
+    "导出为 Markdown": "导出为 Markdown",
+    "导出为 PDF": "导出为 PDF",
+    "下载 Markdown": "下载 Markdown",
+    "打印为 PDF": "打印为 PDF",
+    "导出成功": "导出成功",
+    "导出失败": "导出失败",
+
     // 默认内容（编辑框）
     "defaultContent": "# 欢迎使用 Share Markdown Content\n\n## 功能\n- **实时预览**：在左侧输入 Markdown，右侧自动预览\n- **生成短链接**：一键生成分享链接，分享后可立即打开预览\n- **多平台分享**：支持分享到微信、QQ、微博、Twitter\n- **主题切换**：8 种精美主题颜色，一键切换\n\n## 使用方法\n1. **写入**：在左侧编辑器中输入你的 Markdown 内容\n2. **预览**：右侧实时显示渲染效果\n3. **分享**：点击分享按钮生成短链接\n4. **复制**：点击复制按钮复制链接到剪贴板\n5. **社交分享**：点击社交按钮分享到对应平台\n\n## 提示\n- 支持所有标准 Markdown 语法\n- 支持代码高亮\n- 支持表格、列表、引用等元素\n- 完全免费使用\n\n## 开始使用\n在下方编辑框中开始你的 Markdown 创作吧！✍\n"
   },
@@ -92,6 +101,15 @@ const translations = {
     "玫瑰": "Rose",
     "代码主题": "Code Theme",
     "关闭": "Close",
+
+    // 导出功能
+    "导出": "Export",
+    "导出为 Markdown": "Export as Markdown",
+    "导出为 PDF": "Export as PDF",
+    "下载 Markdown": "Download Markdown",
+    "打印为 PDF": "Print as PDF",
+    "导出成功": "Export Successful",
+    "导出失败": "Export Failed",
 
     // 默认内容（编辑框）
     "defaultContent": "# Welcome to Share Markdown Content\n\n## Features\n- **Instant Preview**: See your Markdown rendered in real-time\n- **Short Links**: Generate shareable links for your content\n- **Multi-Platform**: Share to WeChat, QQ, Weibo, Twitter\n- **Beautiful Themes**: Choose from 8 color themes\n\n## How to Use\n1. **Write**: Type your Markdown content in the editor\n2. **Preview**: See the rendered preview instantly\n3. **Share**: Click the share button to generate a short link\n4. **Copy**: Copy the link and share it anywhere\n\n## Tips\n- Supports all standard Markdown syntax\n- Clean and distraction-free interface\n- Fast and lightweight\n\nEnjoy using Share Markdown Content! 🚀\n"
@@ -142,13 +160,13 @@ const translations = {
     "关闭": "閉じる",
 
     // 导出功能
-    "导出": "Export",
-    "导出为 Markdown": "Export as Markdown",
-    "导出为 PDF": "Export as PDF",
-    "下载 Markdown": "Download Markdown",
-    "打印为 PDF": "Print as PDF",
-    "导出成功": "Export Successful",
-    "导出失败": "Export Failed",
+    "导出": "エクスポート",
+    "导出为 Markdown": "Markdownとしてエクスポート",
+    "导出为 PDF": "PDFとしてエクスポート",
+    "下载 Markdown": "Markdownをダウンロード",
+    "打印为 PDF": "PDFとして印刷",
+    "导出成功": "エクスポート成功",
+    "导出失败": "エクスポート失敗",
 
     // 默认内容（编辑框）
     "defaultContent": "# Share Markdown Content へようこそ\n\n## 機能\n- **リアルタイムプレビュー**: 左側で Markdown を入力すると、右側でリアルタイムにレンダリングされます\n- **短縮リンク生成**: コンテンツを共有するための短縮リンクを生成\n- **マルチプラットフォーム共有**: WeChat、QQ、Weibo、Twitter に対応\n- **美しいテーマ**: 8種類のカラーテーマから選択可能\n\n## 使い方\n1. **書く**: 左側のエディターで Markdown コンテンツを入力\n2. **プレビュー**: 右側でレンダリング結果をリアルタイムに確認\n3. **共有**: 「共有」ボタンをクリックして短縮リンクを生成\n4. **コピー**: 「コピー」ボタンでリンクをクリップボードにコピー\n5. **SNS共有**: ソーシャルボタンで各プラットフォームに共有\n\n## ヒント\n- 標準的な Markdown 構文をサポート\n- コードのシンタックスハイライト表示\n- テーブル、リスト、引用などの要素をサポート\n- クリーンで邪魔のないインターフェース\n- 高速で軽量\n\nShare Markdown Content をお楽しみください！🚀\n"
@@ -254,6 +272,15 @@ const translations = {
     "玫瑰": "Rosa",
     "代码主题": "Tema de código",
     "关闭": "Cerrar",
+
+    // 导出功能
+    "导出": "Exportar",
+    "导出为 Markdown": "Exportar como Markdown",
+    "导出为 PDF": "Exportar como PDF",
+    "下载 Markdown": "Descargar Markdown",
+    "打印为 PDF": "Imprimir como PDF",
+    "导出成功": "Exportación exitosa",
+    "导出失败": "Error en la exportación",
 
     // 默认内容（编辑框）
     "defaultContent": "# Bienvenido a Share Markdown Content\n\n## Funciones\n- **Vista Previa Instantánea**: Vea su Markdown renderizado en tiempo real\n- **Enlaces Cortos**: Genere enlaces compartibles para su contenido\n- **Multi-Plataforma**: Comparta a WeChat, QQ, Weibo, Twitter\n- **Temas Hermosos**: Elija entre 8 temas de color\n\n## Cómo Usar\n1. **Escribir**: Escriba su contenido Markdown en el editor\n2. **Vista Previa**: Vea la vista previa renderizada al instante\n3. **Compartir**: Haga clic en el botón \"Compartir\" para generar un enlace corto\n4. **Copiar**: Haga clic en \"Copiar\" para copiar el enlace al portapapeles\n5. **Compartir Social**: Haga clic en los botones de redes sociales para compartir en las plataformas correspondientes\n\n## Consejos\n- Admite toda la sintaxis estándar de Markdown\n- Admite resaltado de sintaxis para código\n- Admite tablas, listas, citas y otros elementos\n- Gratis y sin distracciones para usar\n\n## Comenzar\n¡Comience a crear sus contenidos Markdown ahora! 🚀\n"
