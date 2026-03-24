@@ -142,13 +142,13 @@ const translations = {
     "关闭": "閉じる",
 
     // 导出功能
-    "导出": "エクスポート",
-    "导出为 Markdown": "Markdownとしてエクスポート",
-    "导出为 PDF": "PDFとしてエクスポート",
-    "下载 Markdown": "Markdownをダウンロード",
-    "打印为 PDF": "PDFとして印刷",
-    "导出成功": "エクスポート成功",
-    "导出失败": "エクスポート失敗",
+    "导出": "Export",
+    "导出为 Markdown": "Export as Markdown",
+    "导出为 PDF": "Export as PDF",
+    "下载 Markdown": "Download Markdown",
+    "打印为 PDF": "Print as PDF",
+    "导出成功": "Export Successful",
+    "导出失败": "Export Failed",
 
     // 默认内容（编辑框）
     "defaultContent": "# Share Markdown Content へようこそ\n\n## 機能\n- **リアルタイムプレビュー**: 左側で Markdown を入力すると、右側でリアルタイムにレンダリングされます\n- **短縮リンク生成**: コンテンツを共有するための短縮リンクを生成\n- **マルチプラットフォーム共有**: WeChat、QQ、Weibo、Twitter に対応\n- **美しいテーマ**: 8種類のカラーテーマから選択可能\n\n## 使い方\n1. **書く**: 左側のエディターで Markdown コンテンツを入力\n2. **プレビュー**: 右側でレンダリング結果をリアルタイムに確認\n3. **共有**: 「共有」ボタンをクリックして短縮リンクを生成\n4. **コピー**: 「コピー」ボタンでリンクをクリップボードにコピー\n5. **SNS共有**: ソーシャルボタンで各プラットフォームに共有\n\n## ヒント\n- 標準的な Markdown 構文をサポート\n- コードのシンタックスハイライト表示\n- テーブル、リスト、引用などの要素をサポート\n- クリーンで邪魔のないインターフェース\n- 高速で軽量\n\nShare Markdown Content をお楽しみください！🚀\n"
